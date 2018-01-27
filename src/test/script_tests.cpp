@@ -12,7 +12,7 @@
 #include "script/sign.h"
 #include "util.h"
 #include "utilstrencodings.h"
-#include "test/test_gupcoin.h"
+#include "test/test_paradigm.h"
 
 #if defined(HAVE_CONSENSUS_LIB)
 #include "script/bitcoinconsensus.h"

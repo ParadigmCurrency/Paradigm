@@ -21,7 +21,7 @@ Construct a linear, no-fork, best version of the blockchain.
 
 ### [Qos](/contrib/qos) ###
 
-A Linux bash script that will set up traffic control (tc) to limit the outgoing bandwidth for connections to the Gupcoin network. This means one can have an always-on gupcoind instance running, and another local gupcoind/gupcoin-qt instance which connects to this node and receives blocks from it.
+A Linux bash script that will set up traffic control (tc) to limit the outgoing bandwidth for connections to the Paradigm network. This means one can have an always-on paradigmd instance running, and another local paradigmd/paradigm-qt instance which connects to this node and receives blocks from it.
 
 ### [Seeds](/contrib/seeds) ###
 Utility to generate the pnSeed[] array that is compiled into the client.
@@ -30,8 +30,8 @@ Build Tools and Keys
 ---------------------
 
 ### [Debian](/contrib/debian) ###
-Contains files used to package gupcoind/gupcoin-qt
-for Debian-based Linux systems. If you compile gupcoind/gupcoin-qt yourself, there are some useful files here.
+Contains files used to package paradigmd/paradigm-qt
+for Debian-based Linux systems. If you compile paradigmd/paradigm-qt yourself, there are some useful files here.
 
 ### [Gitian-descriptors](/contrib/gitian-descriptors) ###
 Gavin's notes on getting gitian builds up and running using KVM.
@@ -46,7 +46,7 @@ Test and Verify Tools
 ---------------------
 
 ### [TestGen](/contrib/testgen) ###
-Utilities to generate test vectors for the data-driven Gupcoin tests.
+Utilities to generate test vectors for the data-driven Paradigm tests.
 
 ### [Test Patches](/contrib/test-patches) ###
 These patches are applied when the automated pull-tester

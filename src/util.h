@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Gupcoin Core developers
+// Copyright (c) 2014-2017 The Paradigm Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -12,7 +12,7 @@
 #define BITCOIN_UTIL_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/gupcoin-config.h"
+#include "config/paradigm-config.h"
 #endif
 
 #include "compat.h"
@@ -34,14 +34,14 @@
 
 // Uncomment the following line to enable debugging messages
 // or enable on a per file basis prior to inclusion of util.h
-//#define ENABLE_GUP_DEBUG
-#ifdef ENABLE_GUP_DEBUG
+//#define ENABLE_PDM_DEBUG
+#ifdef ENABLE_PDM_DEBUG
 #define DBG( x ) x
 #else
 #define DBG( x ) 
 #endif
 
-//Gupcoin only features
+//Paradigm only features
 
 extern bool fMasterNode;
 extern bool fLiteMode;
@@ -248,7 +248,7 @@ std::string GetThreadName();
  */
 template <typename Callable> void TraceThread(const char* name,  Callable func)
 {
-    std::string s = strprintf("gupcoin-%s", name);
+    std::string s = strprintf("paradigm-%s", name);
     RenameThread(s.c_str());
     try
     {

@@ -13,7 +13,7 @@ CCriticalSection cs_vGovernanceKeys;
 	
 	- Users will configure their keys, something like this:
 
-	gupcoin.conf:
+	paradigm.conf:
 
 		addgovkey=PrivKey1:name1 #comments
 		addgovkey=PrivKey2:name2 #comments

@@ -176,8 +176,8 @@
         <translation>Conferma la cifratura del portafoglio</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR GUP&lt;/b&gt;!</source>
-        <translation>Attenzione: se crittografi il tuo portafoglio e perdi la tua parola d'ordine, &lt;b&gt;PERDERAI TUTTI I TUOI GUP&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PDM&lt;/b&gt;!</source>
+        <translation>Attenzione: se crittografi il tuo portafoglio e perdi la tua parola d'ordine, &lt;b&gt;PERDERAI TUTTI I TUOI PDM&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -833,27 +833,27 @@ Indirizzo: %4
         <translation>Selezionare il livello di privacy</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 1000 GUP</source>
-        <translation>Usa 2 separati masternode per mischiare fino al 1000 GUP</translation>
+        <source>Use 2 separate masternodes to mix funds up to 1000 PDM</source>
+        <translation>Usa 2 separati masternode per mischiare fino al 1000 PDM</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 1000 GUP</source>
-        <translation>Usa 8 separati masternode per mischiare fino al 1000 GUP</translation>
+        <source>Use 8 separate masternodes to mix funds up to 1000 PDM</source>
+        <translation>Usa 8 separati masternode per mischiare fino al 1000 PDM</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Usa 16 separati masternode</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 GUP to anonymize 1000 GUP</source>
+        <source>This option is the quickest and will cost about ~0.025 PDM to anonymize 1000 PDM</source>
         <translation>Questa opzione è la più veloce e ti costerà ~0.025DRK circa per anonimizzare 1000DRK</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 GUP to anonymize 1000 GUP</source>
+        <source>This option is moderately fast and will cost about 0.05 PDM to anonymize 1000 PDM</source>
         <translation>Questa opzione è moderatamente veloce e costerà 0.05DRK circa per anonimizzare 1000DRK</translation>
     </message>
     <message>
-        <source>0.1 GUP per 1000 GUP you anonymize.</source>
+        <source>0.1 PDM per 1000 PDM you anonymize.</source>
         <translation>0.1DRK ogni 1000DRK anonimizzati.</translation>
     </message>
     <message>
@@ -1385,8 +1385,8 @@ Più URL vengono separati da una barra verticale |.</translation>
         <translation>Ammontare e Round:</translation>
     </message>
     <message>
-        <source>0 GUP / 0 Rounds</source>
-        <translation>0 GUP / 0 Round</translation>
+        <source>0 PDM / 0 Rounds</source>
+        <translation>0 PDM / 0 Round</translation>
     </message>
     <message>
         <source>Submitted Denom:</source>
@@ -3118,8 +3118,8 @@ Più URL vengono separati da una barra verticale |.</translation>
         <translation>Invia gupcoin</translation>
     </message>
     <message>
-        <source>InstantX doesn't support sending values that high yet. Transactions are currently limited to %1 GUP.</source>
-        <translation>InstantX non supporta ancora l'invio di somme così alte. Le transazioni sono attualmente limitate al %1 GUP.</translation>
+        <source>InstantX doesn't support sending values that high yet. Transactions are currently limited to %1 PDM.</source>
+        <translation>InstantX non supporta ancora l'invio di somme così alte. Le transazioni sono attualmente limitate al %1 PDM.</translation>
     </message>
 </context>
 <context>
@@ -3228,8 +3228,8 @@ Più URL vengono separati da una barra verticale |.</translation>
         <translation>Impossibile trovare fondi sufficienti Darksend denominati per questa transazione.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Darksend non-denominated funds for this transaction that are not equal 1000 GUP.</source>
-        <translation>Impossibile trovare un numero sufficiente di non denominati fondi Darksend per questa operazione che non sono uguali a 1000 GUP.</translation>
+        <source>Unable to locate enough Darksend non-denominated funds for this transaction that are not equal 1000 PDM.</source>
+        <translation>Impossibile trovare un numero sufficiente di non denominati fondi Darksend per questa operazione che non sono uguali a 1000 PDM.</translation>
     </message>
     <message>
         <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
@@ -3440,12 +3440,12 @@ Più URL vengono separati da una barra verticale |.</translation>
         <translation>Abilita utilizzo di darksend automatizzato per i fondi conservati in questo portafoglio (0-1, predefinito: %u)</translation>
     </message>
     <message>
-        <source>Fees (in GUP/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Le commissioni (in GUP/Kb) inferiori a questo valore saranno considerate nulle per la trasmissione (prefedinito:%s)</translation>
+        <source>Fees (in PDM/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Le commissioni (in PDM/Kb) inferiori a questo valore saranno considerate nulle per la trasmissione (prefedinito:%s)</translation>
     </message>
     <message>
-        <source>Fees (in GUP/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Le commissioni (in GUP/Kb)  inferiori a questo valore saranno considerate nulle per la creazione della transazione (prefedinito:%s)</translation>
+        <source>Fees (in PDM/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Le commissioni (in PDM/Kb)  inferiori a questo valore saranno considerate nulle per la creazione della transazione (prefedinito:%s)</translation>
     </message>
     <message>
         <source>Found unconfirmed denominated outputs, will wait till they confirm to continue.</source>

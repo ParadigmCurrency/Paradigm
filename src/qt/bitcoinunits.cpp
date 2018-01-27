@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2017-2018 The Gupcoin Core developers
+// Copyright (c) 2017-2018 The Paradigm Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -20,9 +20,9 @@ BitcoinUnits::BitcoinUnits(QObject *parent):
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(GUP);
-    unitlist.append(mGUP);
-    unitlist.append(uGUP);
+    unitlist.append(PDM);
+    unitlist.append(mPDM);
+    unitlist.append(uPDM);
     unitlist.append(duffs);
     return unitlist;
 }
@@ -31,9 +31,9 @@ bool BitcoinUnits::valid(int unit)
 {
     switch(unit)
     {
-    case GUP:
-    case mGUP:
-    case uGUP:
+    case PDM:
+    case mPDM:
+    case uPDM:
     case duffs:
         return true;
     default:
@@ -47,9 +47,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case GUP: return QString("GUP");
-            case mGUP: return QString("mGUP");
-            case uGUP: return QString::fromUtf8("μGUP");
+            case PDM: return QString("PDM");
+            case mPDM: return QString("mPDM");
+            case uPDM: return QString::fromUtf8("μPDM");
             case duffs: return QString("duffs");
             default: return QString("???");
         }
@@ -58,9 +58,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case GUP: return QString("tGUP");
-            case mGUP: return QString("mtGUP");
-            case uGUP: return QString::fromUtf8("μtGUP");
+            case PDM: return QString("tPDM");
+            case mPDM: return QString("mtPDM");
+            case uPDM: return QString::fromUtf8("μtPDM");
             case duffs: return QString("tduffs");
             default: return QString("???");
         }
@@ -73,10 +73,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case GUP: return QString("Gupcoin");
-            case mGUP: return QString("Milli-Gupcoin (1 / 1" THIN_SP_UTF8 "000)");
-            case uGUP: return QString("Micro-Gupcoin (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-Gupcoin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case PDM: return QString("Paradigm");
+            case mPDM: return QString("Milli-Paradigm (1 / 1" THIN_SP_UTF8 "000)");
+            case uPDM: return QString("Micro-Paradigm (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case duffs: return QString("Ten Nano-Paradigm (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -84,10 +84,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case GUP: return QString("TestGupcoins");
-            case mGUP: return QString("Milli-TestGupcoin (1 / 1" THIN_SP_UTF8 "000)");
-            case uGUP: return QString("Micro-TestGupcoin (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-TestGupcoin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case PDM: return QString("TestParadigms");
+            case mPDM: return QString("Milli-TestParadigm (1 / 1" THIN_SP_UTF8 "000)");
+            case uPDM: return QString("Micro-TestParadigm (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case duffs: return QString("Ten Nano-TestParadigm (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -97,9 +97,9 @@ qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)
     {
-    case GUP:  return 100000000;
-    case mGUP: return 100000;
-    case uGUP: return 100;
+    case PDM:  return 100000000;
+    case mPDM: return 100000;
+    case uPDM: return 100;
     case duffs: return 1;
     default:   return 100000000;
     }
@@ -109,9 +109,9 @@ int BitcoinUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case GUP: return 8;
-    case mGUP: return 5;
-    case uGUP: return 2;
+    case PDM: return 8;
+    case mPDM: return 5;
+    case uPDM: return 2;
     case duffs: return 0;
     default: return 0;
     }

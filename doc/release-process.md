@@ -1,7 +1,7 @@
 Release Process
 ====================
 
-* Update translations, see [translation_process.md](https://github.com/gupcoincoin/gupcoin/blob/master/doc/translation_process.md#syncing-with-transifex)
+* Update translations, see [translation_process.md](https://github.com/paradigmcoin/paradigm/blob/master/doc/translation_process.md#syncing-with-transifex)
 * Update hardcoded [seeds](/contrib/seeds)
 
 * * *
@@ -10,14 +10,14 @@ Release Process
 Check out the source code in the following directory hierarchy.
 
 	cd /path/to/your/toplevel/build
-	git clone https://github.com/gupcoincoin/gitian.sigs.git
-	git clone https://github.com/gupcoincoin/gupcoin-detached-sigs.git
+	git clone https://github.com/paradigmcoin/gitian.sigs.git
+	git clone https://github.com/paradigmcoin/paradigm-detached-sigs.git
 	git clone https://github.com/devrandom/gitian-builder.git
-	git clone https://github.com/gupcoincoin/gupcoin.git
+	git clone https://github.com/paradigmcoin/paradigm.git
 
-###Gupcoin Core maintainers/release engineers, update (commit) version in sources
+###Paradigm Core maintainers/release engineers, update (commit) version in sources
 
-	pushd ./gupcoin
+	pushd ./paradigm
 	contrib/verifysfbinaries/verify.sh
 	configure.ac
 	doc/README*
@@ -40,7 +40,7 @@ Check out the source code in the following directory hierarchy.
 
  Setup Gitian descriptors:
 
-	pushd ./gupcoin
+	pushd ./paradigm
 	export SIGNER=(your Gitian key, ie bluematt, sipa, etc)
 	export VERSION=(new version, e.g. 0.8.0)
 	git fetch
@@ -76,52 +76,52 @@ Check out the source code in the following directory hierarchy.
 
 By default, Gitian will fetch source files as needed. To cache them ahead of time:
 
-	make -C ../gupcoin/depends download SOURCES_PATH=`pwd`/cache/common
+	make -C ../paradigm/depends download SOURCES_PATH=`pwd`/cache/common
 
 Only missing files will be fetched, so this is safe to re-run for each build.
 
 NOTE: Offline builds must use the --url flag to ensure Gitian fetches only from local URLs. For example:
 ```
-./bin/gbuild --url gupcoin=/path/to/gupcoin,signature=/path/to/sigs {rest of arguments}
+./bin/gbuild --url paradigm=/path/to/paradigm,signature=/path/to/sigs {rest of arguments}
 ```
 The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
-###Build and sign Gupcoin Core for Linux, Windows, and OS X:
+###Build and sign Paradigm Core for Linux, Windows, and OS X:
 
-	./bin/gbuild --commit gupcoin=v${VERSION} ../gupcoin/contrib/gitian-descriptors/gitian-linux.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../gupcoin/contrib/gitian-descriptors/gitian-linux.yml
-	mv build/out/gupcoin-*.tar.gz build/out/src/gupcoin-*.tar.gz ../
+	./bin/gbuild --commit paradigm=v${VERSION} ../paradigm/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../paradigm/contrib/gitian-descriptors/gitian-linux.yml
+	mv build/out/paradigm-*.tar.gz build/out/src/paradigm-*.tar.gz ../
 
-	./bin/gbuild --commit gupcoin=v${VERSION} ../gupcoin/contrib/gitian-descriptors/gitian-win.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../gupcoin/contrib/gitian-descriptors/gitian-win.yml
-	mv build/out/gupcoin-*-win-unsigned.tar.gz inputs/gupcoin-win-unsigned.tar.gz
-	mv build/out/gupcoin-*.zip build/out/gupcoin-*.exe ../
+	./bin/gbuild --commit paradigm=v${VERSION} ../paradigm/contrib/gitian-descriptors/gitian-win.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../paradigm/contrib/gitian-descriptors/gitian-win.yml
+	mv build/out/paradigm-*-win-unsigned.tar.gz inputs/paradigm-win-unsigned.tar.gz
+	mv build/out/paradigm-*.zip build/out/paradigm-*.exe ../
 
-	./bin/gbuild --commit gupcoin=v${VERSION} ../gupcoin/contrib/gitian-descriptors/gitian-osx.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../gupcoin/contrib/gitian-descriptors/gitian-osx.yml
-	mv build/out/gupcoin-*-osx-unsigned.tar.gz inputs/gupcoin-osx-unsigned.tar.gz
-	mv build/out/gupcoin-*.tar.gz build/out/gupcoin-*.dmg ../
+	./bin/gbuild --commit paradigm=v${VERSION} ../paradigm/contrib/gitian-descriptors/gitian-osx.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../paradigm/contrib/gitian-descriptors/gitian-osx.yml
+	mv build/out/paradigm-*-osx-unsigned.tar.gz inputs/paradigm-osx-unsigned.tar.gz
+	mv build/out/paradigm-*.tar.gz build/out/paradigm-*.dmg ../
 	popd
 
   Build output expected:
 
-  1. source tarball (gupcoin-${VERSION}.tar.gz)
-  2. linux 32-bit and 64-bit dist tarballs (gupcoin-${VERSION}-linux[32|64].tar.gz)
-  3. windows 32-bit and 64-bit unsigned installers and dist zips (gupcoin-${VERSION}-win[32|64]-setup-unsigned.exe, gupcoin-${VERSION}-win[32|64].zip)
-  4. OS X unsigned installer and dist tarball (gupcoin-${VERSION}-osx-unsigned.dmg, gupcoin-${VERSION}-osx64.tar.gz)
+  1. source tarball (paradigm-${VERSION}.tar.gz)
+  2. linux 32-bit and 64-bit dist tarballs (paradigm-${VERSION}-linux[32|64].tar.gz)
+  3. windows 32-bit and 64-bit unsigned installers and dist zips (paradigm-${VERSION}-win[32|64]-setup-unsigned.exe, paradigm-${VERSION}-win[32|64].zip)
+  4. OS X unsigned installer and dist tarball (paradigm-${VERSION}-osx-unsigned.dmg, paradigm-${VERSION}-osx64.tar.gz)
   5. Gitian signatures (in gitian.sigs/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/
 
 ###Verify other gitian builders signatures to your own. (Optional)
 
   Add other gitian builders keys to your gpg keyring
 
-	gpg --import ../gupcoin/contrib/gitian-downloader/*.pgp
+	gpg --import ../paradigm/contrib/gitian-downloader/*.pgp
 
   Verify the signatures
 
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../gupcoin/contrib/gitian-descriptors/gitian-linux.yml
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../gupcoin/contrib/gitian-descriptors/gitian-win.yml
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../gupcoin/contrib/gitian-descriptors/gitian-osx.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../paradigm/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../paradigm/contrib/gitian-descriptors/gitian-win.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../paradigm/contrib/gitian-descriptors/gitian-osx.yml
 
 	popd
 
@@ -139,25 +139,25 @@ Commit your signature to gitian.sigs:
 
   Wait for Windows/OS X detached signatures:
 	Once the Windows/OS X builds each have 3 matching signatures, they will be signed with their respective release keys.
-	Detached signatures will then be committed to the [gupcoin-detached-sigs](https://github.com/gupcoincoin/gupcoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+	Detached signatures will then be committed to the [paradigm-detached-sigs](https://github.com/paradigmcoin/paradigm-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
   Create (and optionally verify) the signed OS X binary:
 
 	pushd ./gitian-builder
-	./bin/gbuild -i --commit signature=v${VERSION} ../gupcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../gupcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../gupcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-	mv build/out/gupcoin-osx-signed.dmg ../gupcoin-${VERSION}-osx.dmg
+	./bin/gbuild -i --commit signature=v${VERSION} ../paradigm/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../paradigm/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../paradigm/contrib/gitian-descriptors/gitian-osx-signer.yml
+	mv build/out/paradigm-osx-signed.dmg ../paradigm-${VERSION}-osx.dmg
 	popd
 
   Create (and optionally verify) the signed Windows binaries:
 
 	pushd ./gitian-builder
-	./bin/gbuild -i --commit signature=v${VERSION} ../gupcoin/contrib/gitian-descriptors/gitian-win-signer.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../gupcoin/contrib/gitian-descriptors/gitian-win-signer.yml
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../gupcoin/contrib/gitian-descriptors/gitian-win-signer.yml
-	mv build/out/gupcoin-*win64-setup.exe ../gupcoin-${VERSION}-win64-setup.exe
-	mv build/out/gupcoin-*win32-setup.exe ../gupcoin-${VERSION}-win32-setup.exe
+	./bin/gbuild -i --commit signature=v${VERSION} ../paradigm/contrib/gitian-descriptors/gitian-win-signer.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../paradigm/contrib/gitian-descriptors/gitian-win-signer.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../paradigm/contrib/gitian-descriptors/gitian-win-signer.yml
+	mv build/out/paradigm-*win64-setup.exe ../paradigm-${VERSION}-win64-setup.exe
+	mv build/out/paradigm-*win32-setup.exe ../paradigm-${VERSION}-win32-setup.exe
 	popd
 
 Commit your signature for the signed OS X/Windows binaries:
@@ -182,21 +182,21 @@ rm SHA256SUMS
 (the digest algorithm is forced to sha256 to avoid confusion of the `Hash:` header that GPG adds with the SHA256 used for the files)
 Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spurious/nonsensical entry.
 
-- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the gupcoin.org server
+- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the paradigm.org server
 
-- Update gupcoin.org
+- Update paradigm.org
 
 - Announce the release:
 
-  - Release on Gupcoin forum: https://www.gupcoin.org/forum/topic/official-announcements.54/
+  - Release on Paradigm forum: https://www.paradigm.org/forum/topic/official-announcements.54/
 
-  - Gupcoin-development mailing list
+  - Paradigm-development mailing list
 
-  - Update title of #gupcoincoin on Freenode IRC
+  - Update title of #paradigmcoin on Freenode IRC
 
-  - Optionally reddit /r/Gupcoinpay, ... but this will usually sort out itself
+  - Optionally reddit /r/Paradigmpay, ... but this will usually sort out itself
 
-- Notify flare so that he can start building [the PPAs](https://launchpad.net/~gupcoin.org/+archive/ubuntu/gupcoin)
+- Notify flare so that he can start building [the PPAs](https://launchpad.net/~paradigm.org/+archive/ubuntu/paradigm)
 
 - Add release notes for the new version to the directory `doc/release-notes` in git master
 

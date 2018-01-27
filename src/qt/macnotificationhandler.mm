@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"org.gupcoin.Gupcoin-Qt";
+        return @"org.paradigm.Paradigm-Qt";
     } else {
         return [self __bundleIdentifier];
     }

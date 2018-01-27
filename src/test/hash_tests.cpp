@@ -4,7 +4,7 @@
 
 #include "hash.h"
 #include "utilstrencodings.h"
-#include "test/test_gupcoin.h"
+#include "test/test_paradigm.h"
 
 #include <vector>
 

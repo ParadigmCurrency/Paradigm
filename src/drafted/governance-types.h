@@ -16,9 +16,9 @@ enum GovernanceObjectType {
     ValueOverride = 1, 
 
     // -------------------------------
-    // GupcoinNetwork - is the root node
-    GupcoinNetwork = 1000,
-    GupcoinNetworkVariable = 1001,
+    // ParadigmNetwork - is the root node
+    ParadigmNetwork = 1000,
+    ParadigmNetworkVariable = 1001,
     Category = 1002,
 
     // Actors

@@ -6,8 +6,8 @@ SetCompressor /SOLID lzma
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
 !define VERSION @CLIENT_VERSION_MAJOR@.@CLIENT_VERSION_MINOR@.@CLIENT_VERSION_REVISION@
-!define COMPANY "Gupcoin Core project"
-!define URL https://www.gupcoin.org/
+!define COMPANY "Paradigm Core project"
+!define URL https://www.paradigm.org/
 
 # MUI Symbol Definitions
 !define MUI_ICON "@abs_top_srcdir@/share/pixmaps/bitcoin.ico"
@@ -20,7 +20,7 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER "@PACKAGE_NAME@"
-!define MUI_FINISHPAGE_RUN $INSTDIR\gupcoin-qt.exe
+!define MUI_FINISHPAGE_RUN $INSTDIR\paradigm-qt.exe
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
 !define MUI_UNWELCOMEFINISHPAGE_BITMAP "@abs_top_srcdir@/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
@@ -48,18 +48,18 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile @abs_top_srcdir@/gupcoincore-${VERSION}-win@WINDOWS_BITS@-setup.exe
+OutFile @abs_top_srcdir@/paradigmcore-${VERSION}-win@WINDOWS_BITS@-setup.exe
 !if "@WINDOWS_BITS@" == "64"
-InstallDir $PROGRAMFILES64\GupcoinCore
+InstallDir $PROGRAMFILES64\ParadigmCore
 !else
-InstallDir $PROGRAMFILES\GupcoinCore
+InstallDir $PROGRAMFILES\ParadigmCore
 !endif
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
 VIProductVersion ${VERSION}.@CLIENT_VERSION_BUILD@
-VIAddVersionKey ProductName "Gupcoin Core"
+VIAddVersionKey ProductName "Paradigm Core"
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
@@ -73,19 +73,19 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File @abs_top_srcdir@/release/gupcoin-qt.exe
+    File @abs_top_srcdir@/release/paradigm-qt.exe
     File /oname=COPYING.txt @abs_top_srcdir@/COPYING
     File /oname=readme.txt @abs_top_srcdir@/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File @abs_top_srcdir@/release/gupcoind.exe
-    File @abs_top_srcdir@/release/gupcoin-cli.exe
+    File @abs_top_srcdir@/release/paradigmd.exe
+    File @abs_top_srcdir@/release/paradigm-cli.exe
     SetOutPath $INSTDIR\doc
     File /r @abs_top_srcdir@/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 
-    # Remove old wxwidgets-based-gupcoin executable and locales:
-    Delete /REBOOTOK $INSTDIR\gupcoin.exe
+    # Remove old wxwidgets-based-paradigm executable and locales:
+    Delete /REBOOTOK $INSTDIR\paradigm.exe
     RMDir /r /REBOOTOK $INSTDIR\locale
 SectionEnd
 
@@ -95,7 +95,7 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\gupcoin-qt.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\paradigm-qt.exe
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
@@ -106,10 +106,10 @@ Section -post SEC0001
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" UninstallString $INSTDIR\uninstall.exe
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoModify 1
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
-    WriteRegStr HKCR "gupcoincore" "URL Protocol" ""
-    WriteRegStr HKCR "gupcoincore" "" "URL:Gupcoin"
-    WriteRegStr HKCR "gupcoincore\DefaultIcon" "" $INSTDIR\gupcoin-qt.exe
-    WriteRegStr HKCR "gupcoincore\shell\open\command" "" '"$INSTDIR\gupcoin-qt.exe" "%1"'
+    WriteRegStr HKCR "paradigmcore" "URL Protocol" ""
+    WriteRegStr HKCR "paradigmcore" "" "URL:Paradigm"
+    WriteRegStr HKCR "paradigmcore\DefaultIcon" "" $INSTDIR\paradigm-qt.exe
+    WriteRegStr HKCR "paradigmcore\shell\open\command" "" '"$INSTDIR\paradigm-qt.exe" "%1"'
 SectionEnd
 
 # Macro for selecting uninstaller sections
@@ -127,7 +127,7 @@ done${UNSECTION_ID}:
 
 # Uninstaller sections
 Section /o -un.Main UNSEC0000
-    Delete /REBOOTOK $INSTDIR\gupcoin-qt.exe
+    Delete /REBOOTOK $INSTDIR\paradigm-qt.exe
     Delete /REBOOTOK $INSTDIR\COPYING.txt
     Delete /REBOOTOK $INSTDIR\readme.txt
     RMDir /r /REBOOTOK $INSTDIR\daemon
@@ -139,7 +139,7 @@ Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk"
-    Delete /REBOOTOK "$SMSTARTUP\Gupcoin.lnk"
+    Delete /REBOOTOK "$SMSTARTUP\Paradigm.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
     Delete /REBOOTOK $INSTDIR\db.log
@@ -147,7 +147,7 @@ Section -un.post UNSEC0001
     DeleteRegValue HKCU "${REGKEY}" Path
     DeleteRegKey /IfEmpty HKCU "${REGKEY}\Components"
     DeleteRegKey /IfEmpty HKCU "${REGKEY}"
-    DeleteRegKey HKCR "gupcoincore"
+    DeleteRegKey HKCR "paradigmcore"
     RmDir /REBOOTOK $SMPROGRAMS\$StartMenuGroup
     RmDir /REBOOTOK $INSTDIR
     Push $R0

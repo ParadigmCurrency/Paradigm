@@ -4,7 +4,7 @@
 
 #include "limitedmap.h"
 
-#include "test/test_gupcoin.h"
+#include "test/test_paradigm.h"
 
 #include <boost/test/unit_test.hpp>
 

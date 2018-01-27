@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2017-2018 The Gupcoin Core developers
+// Copyright (c) 2017-2018 The Paradigm Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -58,7 +58,7 @@
 using namespace std;
 
 #if defined(NDEBUG)
-# error "Gupcoin Core cannot be compiled without assertions."
+# error "Paradigm Core cannot be compiled without assertions."
 #endif
 
 /**
@@ -2362,7 +2362,7 @@ bool FindUndoPos(CValidationState &state, int nFile, CDiskBlockPos &pos, unsigne
 static CCheckQueue<CScriptCheck> scriptcheckqueue(128);
 
 void ThreadScriptCheck() {
-    RenameThread("gupcoin-scriptch");
+    RenameThread("paradigm-scriptch");
     scriptcheckqueue.Thread();
 }
 
@@ -2745,12 +2745,12 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     CAmount blockReward = nFees + GetBlockSubsidy(pindex->pprev->nBits, pindex->pprev->nHeight, chainparams.GetConsensus());
     std::string strError = "";
     if (!IsBlockValueValid(block, pindex->nHeight, blockReward, strError)) {
-        return state.DoS(0, error("ConnectBlock(GUP): %s", strError), REJECT_INVALID, "bad-cb-amount");
+        return state.DoS(0, error("ConnectBlock(PDM): %s", strError), REJECT_INVALID, "bad-cb-amount");
     }
 
     if (!IsBlockPayeeValid(block.vtx[0], pindex->nHeight, blockReward)) {
         mapRejectedBlocks.insert(make_pair(block.GetHash(), GetTime()));
-        return state.DoS(0, error("ConnectBlock(GUP): couldn't find masternode or superblock payments"),
+        return state.DoS(0, error("ConnectBlock(PDM): couldn't find masternode or superblock payments"),
                                 REJECT_INVALID, "bad-cb-payee");
     }
     // END GOBYTE
@@ -3711,14 +3711,14 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
                     instantsend.Relay(hashLocked);
                     LOCK(cs_main);
                     mapRejectedBlocks.insert(make_pair(block.GetHash(), GetTime()));
-                    return state.DoS(0, error("CheckBlock(GUP): transaction %s conflicts with transaction lock %s",
+                    return state.DoS(0, error("CheckBlock(PDM): transaction %s conflicts with transaction lock %s",
                                                 tx.GetHash().ToString(), hashLocked.ToString()),
                                      REJECT_INVALID, "conflict-tx-lock");
                 }
             }
         }
     } else {
-        LogPrintf("CheckBlock(GUP): spork is off, skipping transaction locking checks\n");
+        LogPrintf("CheckBlock(PDM): spork is off, skipping transaction locking checks\n");
     }
 
     // END GOBYTE
@@ -4892,7 +4892,7 @@ bool static AlreadyHave(const CInv& inv) EXCLUSIVE_LOCKS_REQUIRED(cs_main)
         return mapBlockIndex.count(inv.hash);
 
     /* 
-        Gupcoin Related Inventory Messages
+        Paradigm Related Inventory Messages
 
         --
 

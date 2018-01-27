@@ -8,7 +8,7 @@
 #include "base58.h"
 #include "netbase.h"
 
-#include "test/test_gupcoin.h"
+#include "test/test_paradigm.h"
 
 #include <boost/algorithm/string.hpp>
 #include <boost/test/unit_test.hpp>

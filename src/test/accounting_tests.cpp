@@ -5,7 +5,7 @@
 #include "wallet/wallet.h"
 #include "wallet/walletdb.h"
 
-#include "test/test_gupcoin.h"
+#include "test/test_paradigm.h"
 
 #include <stdint.h>
 

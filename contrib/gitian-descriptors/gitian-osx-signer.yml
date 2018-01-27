@@ -1,5 +1,5 @@
 ---
-name: "gupcoin-dmg-signer"
+name: "paradigm-dmg-signer"
 suites:
 - "trusty"
 architectures:
@@ -8,10 +8,10 @@ packages:
 - "faketime"
 reference_datetime: "2017-01-01 00:00:00"
 remotes:
-- "url": "https://github.com/gupcoincoin/gupcoin-detached-sigs.git"
+- "url": "https://github.com/paradigmcoin/paradigm-detached-sigs.git"
   "dir": "signature"
 files:
-- "gupcoin-osx-unsigned.tar.gz"
+- "paradigm-osx-unsigned.tar.gz"
 script: |
   WRAP_DIR=$HOME/wrapped
   mkdir -p ${WRAP_DIR}
@@ -28,10 +28,10 @@ script: |
     chmod +x ${WRAP_DIR}/${prog}
   done
 
-  UNSIGNED=gupcoin-osx-unsigned.tar.gz
-  SIGNED=gupcoin-osx-signed.dmg
+  UNSIGNED=paradigm-osx-unsigned.tar.gz
+  SIGNED=paradigm-osx-signed.dmg
 
   tar -xf ${UNSIGNED}
   ./detached-sig-apply.sh ${UNSIGNED} signature/osx
-  ${WRAP_DIR}/genisoimage -no-cache-inodes -D -l -probe -V "Gupcoin-Core" -no-pad -r -dir-mode 0755 -apple -o uncompressed.dmg signed-app
+  ${WRAP_DIR}/genisoimage -no-cache-inodes -D -l -probe -V "Paradigm-Core" -no-pad -r -dir-mode 0755 -apple -o uncompressed.dmg signed-app
   ${WRAP_DIR}/dmg dmg uncompressed.dmg ${OUTDIR}/${SIGNED}

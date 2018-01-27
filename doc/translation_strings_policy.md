@@ -1,7 +1,7 @@
 Translation Strings Policy
 ===========================
 
-This document provides guidelines for internationalization of the Gupcoin Core software.
+This document provides guidelines for internationalization of the Paradigm Core software.
 
 How to translate?
 ------------------
@@ -85,10 +85,10 @@ In Qt code use tr's third argument for optional plurality. For example:
 This adds `<numerusform>`s to the respective `.ts` file, which can be translated separately depending on the language. In English, this is simply:
 
     <message numerus="yes">
-        <source>%n active connection(s) to Gupcoin network</source>
+        <source>%n active connection(s) to Paradigm network</source>
         <translation>
-            <numerusform>%n active connection to Gupcoin network</numerusform>
-            <numerusform>%n active connections to Gupcoin network</numerusform>
+            <numerusform>%n active connection to Paradigm network</numerusform>
+            <numerusform>%n active connections to Paradigm network</numerusform>
         </translation>
     </message>
 

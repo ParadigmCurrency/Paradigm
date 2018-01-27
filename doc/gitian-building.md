@@ -1,9 +1,9 @@
 Gitian building
 ================
 
-*Setup instructions for a Gitian build of Gupcoin Core using a Debian VM or physical system.*
+*Setup instructions for a Gitian build of Paradigm Core using a Debian VM or physical system.*
 
-Gitian is the deterministic build process that is used to build the Gupcoin
+Gitian is the deterministic build process that is used to build the Paradigm
 Core executables. It provides a way to be reasonably sure that the
 executables are really built from the source on GitHub. It also makes sure that
 the same, tested dependencies are used and statically built into the executable.
@@ -11,7 +11,7 @@ the same, tested dependencies are used and statically built into the executable.
 Multiple developers build the source code by following a specific descriptor
 ("recipe"), cryptographically sign the result, and upload the resulting signature.
 These results are compared and only if they match, the build is accepted and uploaded
-to gupcoin.org.
+to paradigm.org.
 
 More independent Gitian builders are needed, which is why this guide exists.
 It is preferred you follow these steps yourself instead of using someone else's
@@ -26,7 +26,7 @@ Table of Contents
 - [Installing Gitian](#installing-gitian)
 - [Setting up the Gitian image](#setting-up-the-gitian-image)
 - [Getting and building the inputs](#getting-and-building-the-inputs)
-- [Building Gupcoin Core](#building-gupcoin-core)
+- [Building Paradigm Core](#building-paradigm-core)
 - [Building an alternative repository](#building-an-alternative-repository)
 - [Signing externally](#signing-externally)
 - [Uploading signatures](#uploading-signatures)
@@ -300,11 +300,11 @@ cd ..
 
 **Note**: When sudo asks for a password, enter the password for the user *debian* not for *root*.
 
-Clone the git repositories for Gupcoin Core and Gitian.
+Clone the git repositories for Paradigm Core and Gitian.
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/gupcoincoin/gupcoin
+git clone https://github.com/paradigmcoin/paradigm
 ```
 
 Setting up the Gitian image
@@ -339,16 +339,16 @@ Getting and building the inputs
 --------------------------------
 
 Follow the instructions in [doc/release-process.md](release-process.md#fetch-and-build-inputs-first-time-or-when-dependency-versions-change)
-in the Gupcoin Core repository under 'Fetch and build inputs' to install sources which require
+in the Paradigm Core repository under 'Fetch and build inputs' to install sources which require
 manual intervention. Also optionally follow the next step: 'Seed the Gitian sources cache
 and offline git repositories' which will fetch the remaining files required for building
 offline.
 
-Building Gupcoin Core
+Building Paradigm Core
 ----------------
 
-To build Gupcoin Core (for Linux, OS X and Windows) just follow the steps under 'perform
-Gitian builds' in [doc/release-process.md](release-process.md#perform-gitian-builds) in the Gupcoin Core repository.
+To build Paradigm Core (for Linux, OS X and Windows) just follow the steps under 'perform
+Gitian builds' in [doc/release-process.md](release-process.md#perform-gitian-builds) in the Paradigm Core repository.
 
 This may take some time as it will build all the dependencies needed for each descriptor.
 These dependencies will be cached after a successful build to avoid rebuilding them when possible.
@@ -363,12 +363,12 @@ tail -f var/build.log
 Output from `gbuild` will look something like
 
 ```bash
-    Initialized empty Git repository in /home/debian/gitian-builder/inputs/gupcoin/.git/
+    Initialized empty Git repository in /home/debian/gitian-builder/inputs/paradigm/.git/
     remote: Counting objects: 57959, done.
     remote: Total 57959 (delta 0), reused 0 (delta 0), pack-reused 57958
     Receiving objects: 100% (57959/57959), 53.76 MiB | 484.00 KiB/s, done.
     Resolving deltas: 100% (41590/41590), done.
-    From https://github.com/gupcoincoin/gupcoin
+    From https://github.com/paradigmcoin/paradigm
     ... (new tags, new branch etc)
     --- Building for precise amd64 ---
     Stopping target if it is up
@@ -394,18 +394,18 @@ and inputs.
 
 For example:
 ```bash
-URL=https://github.com/crowning-/gupcoin.git
+URL=https://github.com/crowning-/paradigm.git
 COMMIT=b616fb8ef0d49a919b72b0388b091aaec5849b96
-./bin/gbuild --commit gupcoin=${COMMIT} --url gupcoin=${URL} ../gupcoin/contrib/gitian-descriptors/gitian-linux.yml
-./bin/gbuild --commit gupcoin=${COMMIT} --url gupcoin=${URL} ../gupcoin/contrib/gitian-descriptors/gitian-win.yml
-./bin/gbuild --commit gupcoin=${COMMIT} --url gupcoin=${URL} ../gupcoin/contrib/gitian-descriptors/gitian-osx.yml
+./bin/gbuild --commit paradigm=${COMMIT} --url paradigm=${URL} ../paradigm/contrib/gitian-descriptors/gitian-linux.yml
+./bin/gbuild --commit paradigm=${COMMIT} --url paradigm=${URL} ../paradigm/contrib/gitian-descriptors/gitian-win.yml
+./bin/gbuild --commit paradigm=${COMMIT} --url paradigm=${URL} ../paradigm/contrib/gitian-descriptors/gitian-osx.yml
 ```
 
 Building fully offline
 -----------------------
 
 For building fully offline including attaching signatures to unsigned builds, the detached-sigs repository
-and the gupcoin git repository with the desired tag must both be available locally, and then gbuild must be
+and the paradigm git repository with the desired tag must both be available locally, and then gbuild must be
 told where to find them. It also requires an apt-cacher-ng which is fully-populated but set to offline mode, or
 manually disabling gitian-builder's use of apt-get to update the VM build environment.
 
@@ -424,7 +424,7 @@ cd /path/to/gitian-builder
 LXC_ARCH=amd64 LXC_SUITE=precise on-target -u root apt-get update
 LXC_ARCH=amd64 LXC_SUITE=precise on-target -u root \
   -e DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends -y install \
-  $( sed -ne '/^packages:/,/[^-] .*/ {/^- .*/{s/"//g;s/- //;p}}' ../gupcoin/contrib/gitian-descriptors/*|sort|uniq )
+  $( sed -ne '/^packages:/,/[^-] .*/ {/^- .*/{s/"//g;s/- //;p}}' ../paradigm/contrib/gitian-descriptors/*|sort|uniq )
 LXC_ARCH=amd64 LXC_SUITE=precise on-target -u root apt-get -q -y purge grub
 LXC_ARCH=amd64 LXC_SUITE=precise on-target -u root -e DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
 ```
@@ -444,12 +444,12 @@ Then when building, override the remote URLs that gbuild would otherwise pull fr
 ```bash
 
 cd /some/root/path/
-git clone https://github.com/gupcoincoin/gupcoin-detached-sigs.git
+git clone https://github.com/paradigmcoin/paradigm-detached-sigs.git
 
-BTCPATH=/some/root/path/gupcoin.git
-SIGPATH=/some/root/path/gupcoin-detached-sigs.git
+BTCPATH=/some/root/path/paradigm.git
+SIGPATH=/some/root/path/paradigm-detached-sigs.git
 
-./bin/gbuild --url gupcoin=${BTCPATH},signature=${SIGPATH} ../gupcoin/contrib/gitian-descriptors/gitian-win-signer.yml
+./bin/gbuild --url paradigm=${BTCPATH},signature=${SIGPATH} ../paradigm/contrib/gitian-descriptors/gitian-win-signer.yml
 ```
 
 Signing externally
@@ -464,9 +464,9 @@ When you execute `gsign` you will get an error from GPG, which can be ignored. C
 in `gitian.sigs` to your signing machine and do
 
 ```bash
-    gpg --detach-sign ${VERSION}-linux/${SIGNER}/gupcoin-linux-build.assert
-    gpg --detach-sign ${VERSION}-win/${SIGNER}/gupcoin-win-build.assert
-    gpg --detach-sign ${VERSION}-osx-unsigned/${SIGNER}/gupcoin-osx-build.assert
+    gpg --detach-sign ${VERSION}-linux/${SIGNER}/paradigm-linux-build.assert
+    gpg --detach-sign ${VERSION}-win/${SIGNER}/paradigm-win-build.assert
+    gpg --detach-sign ${VERSION}-osx-unsigned/${SIGNER}/paradigm-osx-build.assert
 ```
 
 This will create the `.sig` files that can be committed together with the `.assert` files to assert your
@@ -476,6 +476,6 @@ Uploading signatures (not yet implemented)
 ---------------------
 
 In the future it will be possible to push your signatures (both the `.assert` and `.assert.sig` files) to the
-[gupcoin/gitian.sigs](https://github.com/gupcoincoin/gitian.sigs/) repository, or if that's not possible to create a pull
+[paradigm/gitian.sigs](https://github.com/paradigmcoin/gitian.sigs/) repository, or if that's not possible to create a pull
 request.
 There will be an official announcement when this repository is online.

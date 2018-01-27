@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2017-2018 The Gupcoin Core developers
+// Copyright (c) 2017-2018 The Paradigm Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -211,7 +211,7 @@ void CActiveMasternode::ManageStateInitial()
     }
 
     if(pwalletMain->GetBalance() < 1000*COIN) {
-        LogPrintf("CActiveMasternode::ManageStateInitial -- %s: Wallet balance is < 1000 GUP\n", GetStateString());
+        LogPrintf("CActiveMasternode::ManageStateInitial -- %s: Wallet balance is < 1000 PDM\n", GetStateString());
         return;
     }
 

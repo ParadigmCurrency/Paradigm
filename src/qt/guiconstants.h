@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2017-2018 The Gupcoin Core developers
+// Copyright (c) 2017-2018 The Paradigm Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,7 +13,7 @@ static const int MODEL_UPDATE_DELAY = 250;
 /* AskPassphraseDialog -- Maximum passphrase length */
 static const int MAX_PASSPHRASE_SIZE = 1024;
 
-/* GupcoinGUI -- Size of icons in status bar */
+/* ParadigmGUI -- Size of icons in status bar */
 static const int STATUSBAR_ICONSIZE = 16;
 
 static const bool DEFAULT_SPLASHSCREEN = true;
@@ -48,9 +48,9 @@ static const int MAX_URI_LENGTH = 255;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 36
 
-#define QAPP_ORG_NAME "Gupcoin"
-#define QAPP_ORG_DOMAIN "gupcoin.org"
-#define QAPP_APP_NAME_DEFAULT "Gupcoin-Qt"
-#define QAPP_APP_NAME_TESTNET "Gupcoin-Qt-testnet"
+#define QAPP_ORG_NAME "Paradigm"
+#define QAPP_ORG_DOMAIN "paradigm.org"
+#define QAPP_APP_NAME_DEFAULT "Paradigm-Qt"
+#define QAPP_APP_NAME_TESTNET "Paradigm-Qt-testnet"
 
 #endif // BITCOIN_QT_GUICONSTANTS_H

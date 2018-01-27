@@ -137,7 +137,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../gupcoin.qrc"/>
+  <include location="../paradigm.qrc"/>
  </resources>
  <connections/>
 </ui>

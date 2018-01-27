@@ -29,7 +29,7 @@ class QUrl;
 class QWidget;
 QT_END_NAMESPACE
 
-/** Utility functions used by the Gupcoin Qt UI.
+/** Utility functions used by the Paradigm Qt UI.
  */
 namespace GUIUtil
 {
@@ -44,7 +44,7 @@ namespace GUIUtil
     void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent);
     void setupAmountWidget(QLineEdit *widget, QWidget *parent);
 
-    // Parse "gupcoin:" URI into recipient object, return true on successful parsing
+    // Parse "paradigm:" URI into recipient object, return true on successful parsing
     bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out);
     bool parseBitcoinURI(QString uri, SendCoinsRecipient *out);
     QString formatBitcoinURI(const SendCoinsRecipient &info);
@@ -114,7 +114,7 @@ namespace GUIUtil
     // Open debug.log
     void openDebugLogfile();
 	
-    // Open gupcoin.conf
+    // Open paradigm.conf
     void openConfigfile();	
 
     // Open masternode.conf

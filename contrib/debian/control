@@ -1,8 +1,8 @@
-Source: gupcoin
+Source: paradigm
 Section: utils
 Priority: optional
-Maintainer: Holger Schinzel <holger@gupcoin.org>
-Uploaders: Holger Schinzel <holger@gupcoin.org>
+Maintainer: Holger Schinzel <holger@paradigm.org>
+Uploaders: Holger Schinzel <holger@paradigm.org>
 Build-Depends: debhelper,
  devscripts,
  automake,
@@ -24,45 +24,45 @@ Build-Depends: debhelper,
  libprotobuf-dev, protobuf-compiler,
  python
 Standards-Version: 3.9.2
-Homepage: https://www.gupcoin.org/
-Vcs-Git: git://github.com/gupcoincoin/gupcoin.git
-Vcs-Browser: https://github.com/gupcoincoin/gupcoin
+Homepage: https://www.paradigm.org/
+Vcs-Git: git://github.com/paradigmcoin/paradigm.git
+Vcs-Browser: https://github.com/paradigmcoin/paradigm
 
-Package: gupcoind
+Package: paradigmd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- Gupcoin is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. Gupcoin uses peer-to-peer
+ Paradigm is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Paradigm uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Gupcoin Core
+ and issuing money are carried out collectively by the network. Paradigm Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides the daemon, gupcoind, and the CLI tool
- gupcoin-cli to interact with the daemon.
+ This package provides the daemon, paradigmd, and the CLI tool
+ paradigm-cli to interact with the daemon.
 
-Package: gupcoin-qt
+Package: paradigm-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- Gupcoin is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. Gupcoin uses peer-to-peer
+ Paradigm is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Paradigm uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Gupcoin Core
+ and issuing money are carried out collectively by the network. Paradigm Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides Gupcoin-Qt, a GUI for Gupcoin based on Qt.
+ This package provides Paradigm-Qt, a GUI for Paradigm based on Qt.
 
-Package: gupcoin-tx
+Package: paradigm-tx
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer digital currency - standalone transaction tool
- Gupcoin is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. Gupcoin uses peer-to-peer
+ Paradigm is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Paradigm uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Gupcoin Core
+ and issuing money are carried out collectively by the network. Paradigm Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides gupcoin-tx, a command-line transaction creation
- tool which can be used without a gupcoin daemon.  Some means of
+ This package provides paradigm-tx, a command-line transaction creation
+ tool which can be used without a paradigm daemon.  Some means of
  exchanging minimal transaction data with peers is still required.

@@ -123,7 +123,7 @@ public:
 };
 
 /**
- * Gupcoin RPC command dispatcher.
+ * Paradigm RPC command dispatcher.
  */
 class CRPCTable
 {

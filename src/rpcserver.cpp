@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2017-2018 The Gupcoin Core developers
+// Copyright (c) 2017-2018 The Paradigm Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -244,11 +244,11 @@ UniValue stop(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop Gupcoin Core server.");
+            "\nStop Paradigm Core server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();
-    return "Gupcoin Core server stopping";
+    return "Paradigm Core server stopping";
 }
 
 /**
@@ -343,19 +343,19 @@ static const CRPCCommand vRPCCommands[] =
     { "hidden",             "resendwallettransactions", &resendwallettransactions, true},
 #endif
 
-    /* Gupcoin features */
-    { "gupcoin",               "masternode",             &masternode,             true  },
-    { "gupcoin",               "masternodelist",         &masternodelist,         true  },
-    { "gupcoin",               "masternodebroadcast",    &masternodebroadcast,    true  },
-    { "gupcoin",               "gobject",                &gobject,                true  },
-    { "gupcoin",               "getgovernanceinfo",      &getgovernanceinfo,      true  },
-    { "gupcoin",               "getsuperblockbudget",    &getsuperblockbudget,    true  },
-    { "gupcoin",               "voteraw",                &voteraw,                true  },
-    { "gupcoin",               "mnsync",                 &mnsync,                 true  },
-    { "gupcoin",               "spork",                  &spork,                  true  },
-    { "gupcoin",               "getpoolinfo",            &getpoolinfo,            true  },
+    /* Paradigm features */
+    { "paradigm",               "masternode",             &masternode,             true  },
+    { "paradigm",               "masternodelist",         &masternodelist,         true  },
+    { "paradigm",               "masternodebroadcast",    &masternodebroadcast,    true  },
+    { "paradigm",               "gobject",                &gobject,                true  },
+    { "paradigm",               "getgovernanceinfo",      &getgovernanceinfo,      true  },
+    { "paradigm",               "getsuperblockbudget",    &getsuperblockbudget,    true  },
+    { "paradigm",               "voteraw",                &voteraw,                true  },
+    { "paradigm",               "mnsync",                 &mnsync,                 true  },
+    { "paradigm",               "spork",                  &spork,                  true  },
+    { "paradigm",               "getpoolinfo",            &getpoolinfo,            true  },
 #ifdef ENABLE_WALLET
-    { "gupcoin",               "privatesend",            &privatesend,            false },
+    { "paradigm",               "privatesend",            &privatesend,            false },
 
     /* Wallet */
     { "wallet",             "keepass",                &keepass,                true },
@@ -578,7 +578,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(const std::string& methodname, const std::string& args)
 {
-    return "> gupcoin-cli " + methodname + " " + args + "\n";
+    return "> paradigm-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(const std::string& methodname, const std::string& args)

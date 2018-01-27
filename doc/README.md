@@ -1,11 +1,11 @@
-Gupcoin Core 0.12.1
+Paradigm Core 0.12.1
 =====================
 
-This is the official reference wallet for Gupcoin digital currency and comprises the backbone of the Gupcoin peer-to-peer network. You can [download Gupcoin Core](https://www.gupcoin.org/downloads/) or [build it yourself](#building) using the guides below.
+This is the official reference wallet for Paradigm digital currency and comprises the backbone of the Paradigm peer-to-peer network. You can [download Paradigm Core](https://www.paradigm.org/downloads/) or [build it yourself](#building) using the guides below.
 
 Running
 ---------------------
-The following are some helpful notes on how to run Gupcoin on your native platform.
+The following are some helpful notes on how to run Paradigm on your native platform.
 
 ### Unix
 
@@ -16,22 +16,22 @@ Unpack the files into a directory and run:
 
 ### Windows
 
-Unpack the files into a directory, and then run gupcoin-qt.exe.
+Unpack the files into a directory, and then run paradigm-qt.exe.
 
 ### OS X
 
-Drag Gupcoin-Qt to your applications folder, and then run Gupcoin-Qt.
+Drag Paradigm-Qt to your applications folder, and then run Paradigm-Qt.
 
 ### Need Help?
 
-* See the [Gupcoin documentation](https://gupcoincoin.atlassian.net/wiki/display/DOC)
+* See the [Paradigm documentation](https://paradigmcoin.atlassian.net/wiki/display/DOC)
 for help and more information.
-* Ask for help on [#gupcoincoin](http://webchat.freenode.net?channels=gupcoincoin) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=gupcoincoin).
-* Ask for help on the [GupcoinTalk](https://gupcointalk.org/) forums.
+* Ask for help on [#paradigmcoin](http://webchat.freenode.net?channels=paradigmcoin) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=paradigmcoin).
+* Ask for help on the [ParadigmTalk](https://paradigmtalk.org/) forums.
 
 Building
 ---------------------
-The following are developer notes on how to build Gupcoin Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Paradigm Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OS X Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -41,7 +41,7 @@ The following are developer notes on how to build Gupcoin Core on your native pl
 
 Development
 ---------------------
-The Gupcoin Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The Paradigm Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)
@@ -57,8 +57,8 @@ The Gupcoin Core repo's [root README](/README.md) contains relevant information 
 - [Dnsseed Policy](dnsseed-policy.md)
 
 ### Resources
-* Discuss on the [GupcoinTalk](https://gupcointalk.org/) forums, in the Development & Technical Discussion board.
-* Discuss on [#gupcoincoin](http://webchat.freenode.net/?channels=gupcoincoin) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=gupcoincoin).
+* Discuss on the [ParadigmTalk](https://paradigmtalk.org/) forums, in the Development & Technical Discussion board.
+* Discuss on [#paradigmcoin](http://webchat.freenode.net/?channels=paradigmcoin) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=paradigmcoin).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)
