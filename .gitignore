@@ -6,13 +6,13 @@ reset-files.bash
 *.tar.gz
 
 *.exe
-src/paradigm
-src/paradigmd
-src/paradigm-cli
-src/paradigm-tx
-src/test/test_paradigm
-src/qt/test/test_paradigm-qt
-src/bench/bench_paradigm
+src/gupcoin
+src/gupcoind
+src/gupcoin-cli
+src/gupcoin-tx
+src/test/test_gupcoin
+src/qt/test/test_gupcoin-qt
+src/bench/bench_gupcoin
 
 .deps
 .dirstamp
@@ -25,7 +25,7 @@ src/bench/bench_paradigm
 *.pyc
 *.o
 *.o-*
-.paradigm
+.gupcoin
 *.a
 *.pb.cc
 *.pb.h
@@ -43,7 +43,7 @@ src/bench/bench_paradigm
 
 # Unit-tests
 Makefile.test
-paradigm-qt_test
+gupcoin-qt_test
 src/test/buildenv.py
 
 # Resources cpp
@@ -57,7 +57,7 @@ build
 *.gcno
 *.gcda
 /*.info
-test_paradigm.coverage/
+test_gupcoin.coverage/
 total.coverage/
 coverage_percent.txt
 
@@ -81,10 +81,10 @@ share/BitcoindComparisonTool.jar
 /doc/doxygen/
 
 libbitcoinconsensus.pc
-src/qt/paradigm-qt.bash
+src/qt/gupcoin-qt.bash
 qa/pull-tester/tests-config.sh
 
 #development symlinks
-paradigm-cli
-paradigmd
-paradigm-qt
+gupcoin-cli
+gupcoind
+gupcoin-qt

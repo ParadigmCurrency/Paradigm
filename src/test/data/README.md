@@ -1,7 +1,7 @@
 Description
 ------------
 
-This directory contains data-driven tests for various aspects of Paradigm.
+This directory contains data-driven tests for various aspects of Gupcoin.
 
 License
 --------

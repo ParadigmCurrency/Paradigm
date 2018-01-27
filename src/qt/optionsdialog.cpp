@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/paradigm-config.h"
+#include "config/gupcoin-config.h"
 #endif
 
 #include "optionsdialog.h"
@@ -90,10 +90,10 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     }
     
     /* Theme selector */
-    ui->theme->addItem(QString("PDM-light"), QVariant("light"));
-    ui->theme->addItem(QString("PDM-blue"), QVariant("drkblue"));
-    ui->theme->addItem(QString("PDM-Crownium"), QVariant("crownium"));
-    ui->theme->addItem(QString("PDM-traditional"), QVariant("trad"));
+    ui->theme->addItem(QString("GUP-light"), QVariant("light"));
+    ui->theme->addItem(QString("GUP-blue"), QVariant("drkblue"));
+    ui->theme->addItem(QString("GUP-Crownium"), QVariant("crownium"));
+    ui->theme->addItem(QString("GUP-traditional"), QVariant("trad"));
     
     /* Language selector */
     QDir translations(":translations");

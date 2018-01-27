@@ -762,16 +762,16 @@ QDialog#HelpMessageDialog QScrollBar:vertical, QDialog#HelpMessageDialog QScroll
 border:0;
 }
 
-/* About Paradigm Dialog */
+/* About Gupcoin Dialog */
 QDialog#AboutDialog {
 background-color:#F8F6F6;
 }
 
-QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About Paradigm Contents */
+QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About Gupcoin Contents */
 margin-left:10px;
 }
 
-QDialog#AboutDialog QLabel#label_2 { /* Margin for About Paradigm text */
+QDialog#AboutDialog QLabel#label_2 { /* Margin for About Gupcoin text */
 margin-right:10px;
 }
 
@@ -1126,7 +1126,7 @@ min-width:410px;
 margin-right:20px;
 margin-left:0;
 margin-top:0;
-background-image: url(':/images/crownium/paradigm_logo_horizontal');
+background-image: url(':/images/crownium/gupcoin_logo_horizontal');
 background-repeat:none;
 }
 
