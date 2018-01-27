@@ -9,8 +9,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between paradigm-cli and paradigmd)
- * of a given instance of the Paradigm system.
+ * CBaseChainParams defines the base parameters (shared between gupcoin-cli and gupcoind)
+ * of a given instance of the Gupcoin system.
  */
 class CBaseChainParams
 {

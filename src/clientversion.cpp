@@ -10,10 +10,10 @@
 
 /**
  * Name of client reported in the 'version' message. Report the same name
- * for both paradigmd and paradigm-qt, to make it harder for attackers to
+ * for both gupcoind and gupcoin-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("Paradigm Core");
+const std::string CLIENT_NAME("Gupcoin Core");
 
 /**
  * Client version number

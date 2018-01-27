@@ -1,11 +1,11 @@
 // Copyright (c) 2012-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2017-2018 The Paradigm Core developers
+// Copyright (c) 2017-2018 The Gupcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "netbase.h"
-#include "test/test_paradigm.h"
+#include "test/test_gupcoin.h"
 
 #include <string>
 

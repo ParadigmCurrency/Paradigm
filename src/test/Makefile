@@ -1,6 +1,6 @@
 all:
-	$(MAKE) -C .. paradigm_test
+	$(MAKE) -C .. gupcoin_test
 clean:
-	$(MAKE) -C .. paradigm_test_clean
+	$(MAKE) -C .. gupcoin_test_clean
 check:
-	$(MAKE) -C .. paradigm_test_check
+	$(MAKE) -C .. gupcoin_test_check

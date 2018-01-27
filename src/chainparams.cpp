@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2017-2018 The Paradigm Core developers
+// Copyright (c) 2017-2018 The Gupcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -43,7 +43,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
 
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "The Star Malaysia 17th November 2017 Paradigm Genesis Reborn";
+    const char* pszTimestamp = "The Star Malaysia 17th November 2017 Gupcoin Genesis Reborn";
     const CScript genesisOutputScript = CScript() << ParseHex("043e5a5fbfbb2caa5f4b7c8fd24d890d6c244de254d579b5ba629f64c1b48275f59e0e1c834a60f6ffb4aaa022aaa4866434ca729a12465f80618fb2070045cb16") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -84,8 +84,8 @@ public:
         consensus.BIP34Height = 227931; // FIX
         consensus.BIP34Hash = uint256S("0x000000000000024b89b42a942fe0d9fea3bb44ab7bd1b19115dd6a759c0808b8"); // FIX
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
-        consensus.nPowTargetTimespan = 60 * 60; // Paradigm: 1 hour, 24 blocks
-        consensus.nPowTargetSpacing = 2.5 * 60; // Paradigm: 150 seconds
+        consensus.nPowTargetTimespan = 60 * 60; // Gupcoin: 1 hour, 24 blocks
+        consensus.nPowTargetSpacing = 2.5 * 60; // Gupcoin: 150 seconds
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
@@ -118,22 +118,22 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x0000033b01055cf8df90b01a14734cae92f7039b9b0e48887b4e33a469d7bc07"));
         assert(genesis.hashMerkleRoot == uint256S("0xdc9a719dc1bcda39107ea55424f00cab512170a1cb69efa08531f483f2399f21"));
 
-        vSeeds.push_back(CDNSSeedData("paradigm.network", "seed1.paradigm.network"));
-        vSeeds.push_back(CDNSSeedData("paradigm.network", "seed2.paradigm.network"));
-        vSeeds.push_back(CDNSSeedData("paradigm.network", "seed3.paradigm.network"));
-        vSeeds.push_back(CDNSSeedData("paradigm.network", "seed4.paradigm.network"));
+        vSeeds.push_back(CDNSSeedData("gupcoin.network", "seed1.gupcoin.network"));
+        vSeeds.push_back(CDNSSeedData("gupcoin.network", "seed2.gupcoin.network"));
+        vSeeds.push_back(CDNSSeedData("gupcoin.network", "seed3.gupcoin.network"));
+        vSeeds.push_back(CDNSSeedData("gupcoin.network", "seed4.gupcoin.network"));
 
-        // Paradigm addresses start with 'G'
+        // Gupcoin addresses start with 'G'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,38);
-        // Paradigm script addresses start with '5'
+        // Gupcoin script addresses start with '5'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,10);
-        // Paradigm private keys start with '5' or 'G' (?)
+        // Gupcoin private keys start with '5' or 'G' (?)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,198);
-        // Paradigm BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
+        // Gupcoin BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
-        // Paradigm BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
+        // Gupcoin BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
-        // Paradigm BIP44 coin type is '5'
+        // Gupcoin BIP44 coin type is '5'
         base58Prefixes[EXT_COIN_TYPE]  = boost::assign::list_of(0x80)(0x00)(0x00)(0x05).convert_to_container<std::vector<unsigned char> >();
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
@@ -194,8 +194,8 @@ public:
         consensus.BIP34Height = 21111; // FIX
         consensus.BIP34Hash = uint256S("0x0000000023b3a96d3484e5abb3755c413e7d41500f8e2a5c3f0dd01299cd8ef8"); // FIX
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
-        consensus.nPowTargetTimespan = 60 * 60; // Paradigm: 1 hour, 24 blocks
-        consensus.nPowTargetSpacing = 2.5 * 60; // Paradigm: 150 seconds
+        consensus.nPowTargetTimespan = 60 * 60; // Gupcoin: 1 hour, 24 blocks
+        consensus.nPowTargetSpacing = 2.5 * 60; // Gupcoin: 150 seconds
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
@@ -225,20 +225,20 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("paradigm.network",  "testnet-dns.paradigm.network"));
-        vSeeds.push_back(CDNSSeedData("paradigm.network",  "testnet2-dns.paradigm.network"));
+        vSeeds.push_back(CDNSSeedData("gupcoin.network",  "testnet-dns.gupcoin.network"));
+        vSeeds.push_back(CDNSSeedData("gupcoin.network",  "testnet2-dns.gupcoin.network"));
 
-        // Testnet Paradigm addresses start with 'n'
+        // Testnet Gupcoin addresses start with 'n'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,112);
-        // Testnet Paradigm script addresses start with '9'
+        // Testnet Gupcoin script addresses start with '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,20);
         // Testnet private keys start with '9' or 'c' (Bitcoin defaults) (?)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,240);
-        // Testnet Paradigm BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet Gupcoin BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Testnet Paradigm BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet Gupcoin BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
-        // Testnet Paradigm BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Gupcoin BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE]  = boost::assign::list_of(0x80)(0x00)(0x00)(0x01).convert_to_container<std::vector<unsigned char> >();
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
@@ -295,8 +295,8 @@ public:
         consensus.BIP34Height = -1; // BIP34 has not necessarily activated on regtest
         consensus.BIP34Hash = uint256();
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 60 * 60; // Paradigm: 1 hour, 24 blocks
-        consensus.nPowTargetSpacing = 2.5 * 60; // Paradigm: 150 seconds
+        consensus.nPowTargetTimespan = 60 * 60; // Gupcoin: 1 hour, 24 blocks
+        consensus.nPowTargetSpacing = 2.5 * 60; // Gupcoin: 150 seconds
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
         consensus.nRuleChangeActivationThreshold = 108; // 75% for testchains
@@ -339,17 +339,17 @@ public:
             0,
             0
         };
-        // Regtest Paradigm addresses start with 'n'
+        // Regtest Gupcoin addresses start with 'n'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,112);
-        // Regtest Paradigm script addresses start with '9'
+        // Regtest Gupcoin script addresses start with '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,20);
         // Regtest private keys start with '9' or 'c' (Bitcoin defaults) (?)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,240);
-        // Regtest Paradigm BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Regtest Gupcoin BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Regtest Paradigm BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Regtest Gupcoin BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
-        // Regtest Paradigm BIP44 coin type is '1' (All coin's testnet default)
+        // Regtest Gupcoin BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE]  = boost::assign::list_of(0x80)(0x00)(0x00)(0x01).convert_to_container<std::vector<unsigned char> >();
    }
 };

@@ -4,15 +4,15 @@
 
 	* means the category has an associated class
 	
-	CParadigmNetwork: GOBYTE NETWORK (ROOT)
+	CGupcoinNetwork: GOBYTE NETWORK (ROOT)
 	has:
 		vector<CNetworkVariable> vecNetworkVariables;
-		vector<CParadigmProject> vecProjects;
+		vector<CGupcoinProject> vecProjects;
 		vector<CGovernanceObject> vecProposals;
 		vector<CBudgetContract> vecContracts;
 		vector<CBudgetUsers> vecUsers;
 
-	CParadigmProject:
+	CGupcoinProject:
 	has:
 		name
 		employees
@@ -49,7 +49,7 @@
 	// 			-> USER1 (only users are allowed here in this scope)
 	// 			-> USER2
 	// 		-> GROUP2 (EVO)
-	// 			-> VALUEOVERRIDE (STORE=PDMDRIVE)
+	// 			-> VALUEOVERRIDE (STORE=GUPDRIVE)
 	// 			-> USER1
 
 	// 	-> COMPANIES

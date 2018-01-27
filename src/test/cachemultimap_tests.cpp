@@ -1,9 +1,9 @@
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2017-2018 The Paradigm Core developers
+// Copyright (c) 2017-2018 The Gupcoin Core developers
 
 #include "cachemultimap.h"
 
-#include "test/test_paradigm.h"
+#include "test/test_gupcoin.h"
 
 #include <algorithm>
 #include <iostream>

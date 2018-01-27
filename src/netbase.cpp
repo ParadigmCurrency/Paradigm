@@ -4,7 +4,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifdef HAVE_CONFIG_H
-#include "config/paradigm-config.h"
+#include "config/gupcoin-config.h"
 #endif
 
 #include "netbase.h"

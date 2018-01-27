@@ -4,7 +4,7 @@
 
 #include "compressor.h"
 #include "util.h"
-#include "test/test_paradigm.h"
+#include "test/test_gupcoin.h"
 
 #include <stdint.h>
 

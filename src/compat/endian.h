@@ -6,7 +6,7 @@
 #define BITCOIN_COMPAT_ENDIAN_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/paradigm-config.h"
+#include "config/gupcoin-config.h"
 #endif
 
 #include <stdint.h>
