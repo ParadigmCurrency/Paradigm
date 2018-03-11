@@ -4,15 +4,16 @@
 // Copyright (c) 2017-2018 The Paradigm Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
 #include "chainparams.h"
 #include "consensus/merkle.h"
-
+#include <stdio.h>
 #include "tinyformat.h"
 #include "util.h"
 #include "utilstrencodings.h"
 
 #include <assert.h>
+#include <arith_uint256.h>
+
 
 #include <boost/assign/list_of.hpp>
 
@@ -117,11 +118,11 @@ public:
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x0000033b01055cf8df90b01a14734cae92f7039b9b0e48887b4e33a469d7bc07"));
         assert(genesis.hashMerkleRoot == uint256S("0xdc9a719dc1bcda39107ea55424f00cab512170a1cb69efa08531f483f2399f21"));
-
-        vSeeds.push_back(CDNSSeedData("paradigm.network", "seed1.paradigm.network"));
-        vSeeds.push_back(CDNSSeedData("paradigm.network", "seed2.paradigm.network"));
-        vSeeds.push_back(CDNSSeedData("paradigm.network", "seed3.paradigm.network"));
-        vSeeds.push_back(CDNSSeedData("paradigm.network", "seed4.paradigm.network"));
+        
+        vSeeds.push_back(CDNSSeedData("108.61.202.187", "108.61.202.187"));
+        vSeeds.push_back(CDNSSeedData("45.76.18.13", "45.76.18.13"));      
+        vSeeds.push_back(CDNSSeedData("207.148.8.38", "207.148.8.38"));
+        vSeeds.push_back(CDNSSeedData("45.76.228.32", "45.76.228.32"));
 
         // Paradigm addresses start with 'G'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,38);
@@ -151,17 +152,11 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (   500, uint256S("0x00000000009d382b57dda9a0e169d1f3f6f384eff5aecbf24329457bb1b30962"))
-            (  5500, uint256S("0x00000000002e3468a5196451755b5ff8d27cb7260a34250c98b0607eddfd91b2"))
-            ( 10500, uint256S("0x000000000018df60822b6fc7e13b2da59e5c7ee29e015bebb7cfaddc22001180"))
-            ( 15500, uint256S("0x00000000003c1ae6c074c7798f1b8111916bfa86a7f41ec51633d1fc1c925140"))
-            ( 20500, uint256S("0x0000000000702ff7699e8efd6af8b0ed888f77152078ed7bc782ece100e134aa"))
-            ( 25500, uint256S("0x00000000002e31e50a1753f1eff7b9d6e34b4a9def0aecd232a30b8cd5a602b4"))
-            ( 30500, uint256S("0x000000000043b2ab4bd00554e3265d00d89144ac38fe309b23030416f00bf977")),
-            1515755050, // * UNIX timestamp of last checkpoint block
-            70046,   // * total number of transactions between genesis and last checkpoint
+            (   0, uint256S("0x"))
+            //1515755050, // * UNIX timestamp of last checkpoint block
+           // 70046,   // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
-            2800        // * estimated number of transactions per day after checkpoint
+            //2800        // * estimated number of transactions per day after checkpoint
         };
     }
 };
@@ -258,10 +253,10 @@ public:
             boost::assign::map_list_of
             ( 0, uint256S("0x00000c958ba1a0fe2174effe57a7f39c4c32b8341f1efa20be78b48b6b6bb353")),
 
-            1510727200, // * UNIX timestamp of last checkpoint block
-            0,     // * total number of transactions between genesis and last checkpoint
+           // 1510727200, // * UNIX timestamp of last checkpoint block
+          //  0,     // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
-            500         // * estimated number of transactions per day after checkpoint
+           // 500         // * estimated number of transactions per day after checkpoint
         };
 
     }
@@ -334,10 +329,10 @@ public:
 
         checkpointData = (CCheckpointData){
             boost::assign::map_list_of
-            ( 0, uint256S("0x00000dbc9aa1686b4dfb177300185c6a3e0b13d1d4d346c5bccdd19fdf9ebc5a")),
-            0,
-            0,
-            0
+            ( 0, uint256S("0x00000dbc9aa1686b4dfb177300185c6a3e0b13d1d4d346c5bccdd19fdf9ebc5a"))
+            //0,
+           // 0,
+           // 0
         };
         // Regtest Paradigm addresses start with 'n'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,112);
