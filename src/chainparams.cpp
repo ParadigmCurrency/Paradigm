@@ -10,7 +10,6 @@
 #include "tinyformat.h"
 #include "util.h"
 #include "utilstrencodings.h"
-
 #include <assert.h>
 #include <arith_uint256.h>
 
