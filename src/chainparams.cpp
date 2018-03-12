@@ -12,10 +12,7 @@
 #include "utilstrencodings.h"
 #include <assert.h>
 #include <arith_uint256.h>
-
-
 #include <boost/assign/list_of.hpp>
-
 #include "chainparamsseeds.h"
 
 
