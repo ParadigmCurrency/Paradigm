@@ -324,7 +324,7 @@ void CMasternodeSync::ProcessTick()
             } else if(nRequestedMasternodeAttempt < 4) {
                 mnodeman.DsegUpdate(pnode);
             } else if(nRequestedMasternodeAttempt < 6) {
-                int nMnCount = mnodeman.CountMasternodes();
+                int nMnCount = mnodeman.CountMasternodes() + 1;
                 pnode->PushMessage(NetMsgType::MASTERNODEPAYMENTSYNC, nMnCount); //sync payment votes
                 SendGovernanceSyncRequest(pnode);
             } else {
